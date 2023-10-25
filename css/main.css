@@ -1,0 +1,78 @@
+body{
+    background-image: url("../images/Galaxy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+html {
+    cursor: none;
+}
+
+.panelLeft{
+    width: 300px;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: left 0.4s ease;
+    color: white;
+    cursor: default;
+}
+
+.panelRight{
+    width: 300px;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    transition: right 0.4s ease;
+    color: white;
+    cursor: default;
+}
+
+.nazov{
+    width: inherit;
+    height: 50px;
+    background-color: rgb(87, 86, 86);
+    position: fixed;
+}
+
+.informacie{
+    width: inherit;
+    height: inherit;
+    transform: translateY(30px);
+}
+
+.textGalaxcia{
+    animation: changeColor 10s infinite ;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    font-size: 35px;
+    top: -30px;
+}
+
+.odkaz1, .odkaz2, .odkaz3, .odkaz4, .odkaz5{
+    font-size: 35px;
+    text-align: left;
+    color: red;
+    background-image: url("../images/nightSky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes changeColor {
+    0% {
+        color: #0d0d4b;
+    } 25% {
+        color: #c50d0d;
+    } 50% {
+        color: #590c59;
+    } 75% {
+        color: #e1a13b;
+    } 100% {
+        color: #0d0d4b;
+    }
+}
