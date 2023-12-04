@@ -1,3 +1,4 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 body{
     background-image: url("../images/Galaxy.gif");
     background-size: cover;
@@ -62,6 +63,25 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.hudba{
+    width: 300px;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    color: orange;
+    font-size: larger;
+    text-align: center;
+}
+
+.pause {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
 
 @keyframes changeColor {
     0% {
