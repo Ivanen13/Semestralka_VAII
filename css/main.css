@@ -32,6 +32,23 @@ html {
     color: white;
     cursor: default;
 }
+.panelRight li{
+    position: relative;
+    top: 40px;
+    margin-top: 20px;
+}
+
+.panelRight ul li {
+    font-size: 35px;
+    text-align: left;
+    color: red;
+    background-image: url("../images/nightSky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.panelRight ul li a{
+    text-decoration: none;
+}
 
 .nazov{
     width: inherit;
