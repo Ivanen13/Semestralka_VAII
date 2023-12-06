@@ -20,13 +20,18 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $hashedPasswordInDatabase = $row['users_password'];
-    $username = $row['users_name'];
 
     if (password_verify($password, $hashedPasswordInDatabase)) {
         //$_SESSION['successMessage'] = "Úspešné prihlásenie! Vitajte, " . $username . "!";
-        echo "Úspešné prihlásenie! Vitajte, " . $username . "!";
+        session_start();
+        $username = $row['users_name'];
+        $email = $row['users_email'];
 
-        header("Location: html/main.html");
+        $_SESSION['logged_in'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+
+        header("Location: html/main.php");
     } else {
         echo "Nesprávne prihlasovacie údaje.";
     }
