@@ -63,9 +63,17 @@
         </div>
         <div>
             <ul>
-                <li><a href="login.html"> Prihlasenie</a> </li>
-                <li><a href="registration.html"> Registracia</a> </li>
-                <li><a href="change.php"> Change </a> </li>
+                <?php
+                session_start();
+                if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+                    echo '<li><a href="change.php"> zmenit Udaje </a> </li>';
+                    echo '<li><a href="delete.php"> Vymazat Ucet </a> </li>';
+                    echo '<li><a href="loginOut.php"> Odhlasit sa </a> </li>';
+                } else {
+                    echo '<li><a href="login.html"> Prihlasenie</a> </li>';
+                    echo '<li><a href="registration.html"> Registracia</a> </li>';
+                }
+                ?>
             </ul>
         </div>
 
@@ -78,15 +86,6 @@
             </button>
         </div>
     </div>
-
-    <?php
-    session_start();
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo 'Vitajte, ' . $_SESSION['email'] . '! <a href="logout.php">Odhlásiť sa</a>';
-        } else {
-            echo 'Nie ste prihlásený. <a href="login.php">Prihlásiť sa</a>';
-        }
-    ?>
 
     <script src="../javascript/main.js"> </script>
 </body>

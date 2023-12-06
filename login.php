@@ -16,7 +16,6 @@ $password = $_POST['password'];
 $sql = "SELECT * FROM users WHERE users_email = '$email'";
 $result = $conn->query($sql);
 
-
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $hashedPasswordInDatabase = $row['users_password'];
